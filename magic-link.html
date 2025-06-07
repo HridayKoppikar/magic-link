@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .message {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Opening Ecosystem App...</h1>
+  <p class="message">If nothing happens, please open the app manually.</p>
+
+  <script>
+    const url = window.location.href;
+
+    // Optional: add fallback timeout to redirect to Play Store or App Store
+    setTimeout(() => {
+      // Optional fallback URL
+      window.location.href = "https://yourdomain.com/download";
+    }, 3000);
+
+    // Redirect to your custom scheme with encoded magic link
+    const encodedLink = encodeURIComponent(url);
+    window.location.href = `ecosystem://magic-link?link=${encodedLink}`;
+  </script>
+</body>
+</html>
