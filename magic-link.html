@@ -28,7 +28,7 @@
 
   <script>
       const url = window.location.origin + window.location.pathname + window.location.search;
-      const encodedLink = encodeURIComponent(url);
+      const encodedLink = btoa(url);
       window.location.href = `ecosystem://?link=${encodedLink}`;
   </script>
 </body>
