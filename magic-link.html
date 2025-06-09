@@ -27,17 +27,9 @@
   <p class="message">If nothing happens, please open the app manually.</p>
 
   <script>
-    const url = window.location.href;
-
-    // Optional: add fallback timeout to redirect to Play Store or App Store
-    setTimeout(() => {
-      // Optional fallback URL
-      window.location.href = "https://yourdomain.com/download";
-    }, 3000);
-
-    // Redirect to your custom scheme with encoded magic link
-    const encodedLink = encodeURIComponent(url);
-    window.location.href = `ecosystem://?link=${encodedLink}`;
+      const url = window.location.origin + window.location.pathname + window.location.search;
+      const encodedLink = encodeURIComponent(url);
+      window.location.href = `ecosystem://?link=${encodedLink}`;
   </script>
 </body>
 </html>
