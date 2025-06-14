@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session Key</title>
+    <script>
+      const params = new URLSearchParams(queryString);
+      document.querySelector("#skey").value = parseInt(params.get("apisession"), -1);
+
+      function copy() {
+        navigator.clipboard.writeText(parseInt(params.get("apisession"), -1));
+      }
+    </script>
+</head>
+
+<body>
+    <h2>Session Key</h2>
+    <p id="skey"></p>
+    <button onclick="copy()">Copy Session Key</button>
+</body>
+</html>
