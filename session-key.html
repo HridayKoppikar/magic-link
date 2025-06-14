@@ -5,11 +5,11 @@
     <script>
         window.onload = () => {
             const params = new URL(document.location.toString()).searchParams;
-            document.querySelector("#skey").value = parseInt(params.get("apisession"), 10);
+            document.querySelector("#skey").value = params.get("apisession");
         }
 
       function copy() {
-        navigator.clipboard.writeText(parseInt(params.get("apisession"), 10));
+        navigator.clipboard.writeText(params.get("apisession"));
       }
     </script>
 </head>
