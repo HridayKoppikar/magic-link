@@ -5,17 +5,14 @@
     <script>
         window.onload = () => {
             const params = new URL(document.location.toString()).searchParams;
-            document.querySelector("#skey").value = params.get("apisession");
+            document.querySelector("#skey").textContent = params.get("apisession");
 
-            console.log(params, params.get("apisession"));
-
-            function copy() {
+            window.copy = function() {
                 navigator.clipboard.writeText(params.get("apisession"));
             }
         }
     </script>
 </head>
-
 <body>
     <h2>Session Key</h2>
     <p id="skey"></p>
