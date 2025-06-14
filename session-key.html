@@ -4,10 +4,10 @@
     <title>Session Key</title>
     <script>
       const params = new URLSearchParams(queryString);
-      document.querySelector("#skey").value = parseInt(params.get("apisession"), -1);
+      document.querySelector("#skey").value = parseInt(params.get("apisession"), 10);
 
       function copy() {
-        navigator.clipboard.writeText(parseInt(params.get("apisession"), -1));
+        navigator.clipboard.writeText(parseInt(params.get("apisession"), 10));
       }
     </script>
 </head>
