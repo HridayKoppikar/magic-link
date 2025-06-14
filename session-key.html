@@ -3,7 +3,7 @@
 <head>
     <title>Session Key</title>
     <script>
-        document.onload = () => {
+        window.onload = () => {
             const params = new URLSearchParams(queryString);
             document.querySelector("#skey").value = parseInt(params.get("apisession"), 10);
         }
