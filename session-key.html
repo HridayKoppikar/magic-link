@@ -6,11 +6,13 @@
         window.onload = () => {
             const params = new URL(document.location.toString()).searchParams;
             document.querySelector("#skey").value = params.get("apisession");
-        }
 
-      function copy() {
-        navigator.clipboard.writeText(params.get("apisession"));
-      }
+            console.log(params, params.get("apisession"));
+
+            function copy() {
+                navigator.clipboard.writeText(params.get("apisession"));
+            }
+        }
     </script>
 </head>
 
